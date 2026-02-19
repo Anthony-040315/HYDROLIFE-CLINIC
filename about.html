@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Hydrolife Clinic – Kamogelo Molokomme</title>
+  <meta name="description" content="Meet Kamogelo Molokomme, founder of Hydrolife Clinic. SANC-registered nurse, midwife and beauty therapist serving Mokopane since 2021." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0e7070',
+            'primary-light': '#128888',
+            secondary: '#1a3f3f',
+            gold: '#c8a96e',
+            'gold-light': '#e8c98e',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; }
+
+    .navbar-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.10); }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .slide-left { opacity: 0; transform: translateX(-32px); transition: opacity .7s ease, transform .7s ease; }
+    .slide-left.visible { opacity: 1; transform: translateX(0); }
+    .slide-right { opacity: 0; transform: translateX(32px); transition: opacity .7s ease, transform .7s ease; }
+    .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+    #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; max-height: 0; overflow: hidden; opacity: 0; }
+    #mobile-menu.open { max-height: 500px; opacity: 1; }
+
+    .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 100; animation: pulse-wa 2.5s infinite; }
+    @keyframes pulse-wa { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); } 70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); } }
+
+    .value-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(13,92,92,.14); }
+
+    .credential-card { transition: transform 0.22s ease, box-shadow 0.22s ease; border-top: 3px solid #0e7070; }
+    .credential-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px -8px rgba(14,112,112,.12); }
+
+    .quote-bar { border-left: 4px solid #c8a96e; padding-left: 1.5rem; }
+
+    /* Story pull quote */
+    .pull-quote {
+      position: relative;
+      font-style: italic;
+      color: #1a3f3f;
+      font-weight: 600;
+    }
+    .pull-quote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 6rem;
+      color: #0e7070;
+      opacity: 0.15;
+      position: absolute;
+      top: -2rem;
+      left: -1rem;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<header id="navbar" class="sticky top-0 z-50 bg-white border-b border-gray-100 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="images/Hydrolife_clinic_logo.png" alt="Hydrolife Clinic" class="h-14 w-auto object-contain"
+             onerror="this.onerror=null;this.src='https://placehold.co/200x56/0d5c5c/ffffff?text=HYDROLIFE';" />
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html"    class="px-4 py-2 rounded-lg text-gray-600 hover:text-primary hover:bg-teal-50 text-sm font-medium transition">Home</a>
+        <a href="services.html" class="px-4 py-2 rounded-lg text-gray-600 hover:text-primary hover:bg-teal-50 text-sm font-medium transition">Services</a>
+        <a href="about.html"    class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold">About</a>
+        <a href="contact.html"  class="px-4 py-2 rounded-lg text-gray-600 hover:text-primary hover:bg-teal-50 text-sm font-medium transition">Contact</a>
+      </nav>
+      <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-sm transition">
+        <i class="fas fa-calendar-alt text-xs"></i> Book Appointment
+      </a>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg text-primary focus:outline-none">
+        <i id="ham-icon" class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+    <div class="px-4 pt-3 pb-4 space-y-1">
+      <a href="index.html"    class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-primary font-medium text-sm">Home</a>
+      <a href="services.html" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-primary font-medium text-sm">Services</a>
+      <a href="about.html"    class="block px-3 py-2.5 rounded-lg bg-primary text-white font-semibold text-sm">About</a>
+      <a href="contact.html"  class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-primary font-medium text-sm">Contact</a>
+      <div class="pt-2 border-t border-gray-100">
+        <a href="contact.html" class="flex items-center justify-center gap-2 bg-primary text-white w-full py-2.5 rounded-full font-semibold text-sm transition hover:bg-primary-light">
+          <i class="fas fa-calendar-alt text-xs"></i> Book Appointment
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════ HERO HEADER ═══════════════ -->
+<section class="bg-gradient-to-br from-secondary to-primary text-white py-12 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+    <p class="text-gold uppercase tracking-[0.25em] text-xs font-semibold mb-5">Our Story & Mission</p>
+    <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">About <em class="italic text-gold">Hydrolife</em><br />Clinic</h1>
+    <p class="text-teal-100 text-xl max-w-2xl mx-auto">Where evidence-based medicine meets spa-like serenity — serving Mokopane with heart since 2021.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ COMBINED STORY SECTION ═══════════════ -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Image side -->
+      <div class="relative slide-left">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=800&fit=crop"
+             alt="Kamogelo Molokomme – Founder of Hydrolife Clinic"
+             class="rounded-3xl w-full h-auto object-cover shadow-2xl" />
+        <!-- Credentials badge -->
+        <div class="absolute -bottom-6 -right-4 bg-primary text-white rounded-2xl p-5 shadow-2xl max-w-[180px] text-center hidden sm:block">
+          <div class="font-serif text-3xl font-bold">4+</div>
+          <div class="text-xs text-teal-200 mt-0.5 uppercase tracking-wider leading-tight">Years of<br />Excellence</div>
+        </div>
+          <!-- SANC badge -->
+          <div class="absolute top-5 left-5 bg-white rounded-xl px-4 py-3 shadow-lg flex items-center gap-3">
+            <img src="images/SANC LOGO.WEBP" alt="SANC Registered"
+                 class="h-8 w-auto object-contain"
+                 onerror="this.onerror=null;this.src='https://placehold.co/80x32/0e7070/ffffff?text=SANC';" />
+          <div>
+            <p class="text-xs font-bold text-gray-900">SANC Registered</p>
+            <p class="text-xs text-gray-500">Verified Practitioner</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story side -->
+      <div class="space-y-6 slide-right">
+        <p class="text-primary uppercase tracking-[0.2em] text-xs font-semibold">Meet the Founder</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          Kamogelo<br /><span class="text-primary">Molokomme</span>
+        </h2>
+        <p class="text-gray-500 text-sm uppercase tracking-widest">Registered Nurse · Midwife · Beauty Therapist · Founder</p>
+
+        <div class="h-px bg-gray-100"></div>
+
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Kamogelo Molokomme began her career as a registered nurse at a public hospital in Limpopo. She witnessed firsthand how clinical environments can feel rushed, impersonal, and often intimidating — and she was determined to do something different.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Her vision for Hydrolife Clinic was born from a simple belief. In 2021, she opened the doors of Hydrolife — a private sanctuary where evidence-based medicine meets spa-like serenity. Whether you're visiting for routine medical care, maternal health services, or transformative aesthetic treatments, every service is delivered with clinical rigour and genuine warmth.
+        </p>
+
+        <!-- Pull quote -->
+        <div class="quote-bar py-2">
+          <p class="pull-quote text-lg text-secondary leading-relaxed">
+            You shouldn't have to choose between expert medical care and feeling truly cared for.
+          </p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed">
+          As a woman, a nurse, and a beauty professional, Kamogelo understands the unique concerns of her patients — creating a safe, comfortable, and non-judgmental environment where you can discuss your health and aesthetic goals openly. Her multilingual, empathetic approach ensures that every patient feels heard, respected, and beautifully cared for.
+        </p>
+
+        <p class="text-primary font-semibold text-lg italic">"Luxury care with a personal touch — that's our promise."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CREDENTIALS & QUALIFICATIONS ═══════════════ -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 fade-in">
+      <p class="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-3">Verified Expertise</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900">Qualifications &<br /><span class="text-primary">Credentials</span></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+      <!-- Nursing Diploma -->
+      <div class="credential-card bg-white rounded-2xl p-8 shadow-sm text-center fade-in">
+        <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5 text-3xl">🎓</div>
+        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">Nursing Diploma</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Diploma in Nursing (General, Community, Psychiatric & Midwifery) from Sefako Makgatho Health Sciences University, 2017.
+        </p>
+      </div>
+
+      <!-- SANC Registration -->
+      <div class="credential-card bg-white rounded-2xl p-8 shadow-sm text-center fade-in" style="transition-delay:.08s">
+        <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <img src="images/SANC LOGO.WEBP" alt="SANC"
+               class="h-8 w-auto object-contain"
+               onerror="this.onerror=null;this.src='https://placehold.co/80x32/0e7070/ffffff?text=SANC';" />
+        </div>
+        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">SANC Registration</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Fully registered with the South African Nursing Council. Licensed to practice independently as a healthcare professional.
+        </p>
+      </div>
+
+      <!-- IV Therapy -->
+      <div class="credential-card bg-white rounded-2xl p-8 shadow-sm text-center fade-in" style="transition-delay:.16s">
+        <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5 text-3xl">💉</div>
+        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">IV Vitamin Therapy</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Certified in Intravenous Vitamin Therapy administration, enabling safe delivery of premium wellness infusions.
+        </p>
+      </div>
+
+      <!-- Beauty Therapy -->
+      <div class="credential-card bg-white rounded-2xl p-8 shadow-sm text-center fade-in" style="transition-delay:.24s">
+        <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5 text-3xl">✨</div>
+        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">Beauty Therapy</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Qualified Beauty Therapist with advanced certifications in microblading, chemical peels, microneedling, and body contouring.
+        </p>
+      </div>
+    </div>
+
+    <!-- Professional highlights -->
+    <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 fade-in">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center">
+          <i class="fas fa-award text-primary text-xl"></i>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-gray-900">Professional Highlights</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">SANC Registered Practitioner</p>
+            <p class="text-gray-500 text-sm">South African Nursing Council — upholding the highest professional standards</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">Independent Practice Permit</p>
+            <p class="text-gray-500 text-sm">Formally licensed by SANC to operate Hydrolife as an independent clinic</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">Continuous Professional Development</p>
+            <p class="text-gray-500 text-sm">Regular upskilling in the latest medical and aesthetic techniques</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">4+ Years Serving Mokopane</p>
+            <p class="text-gray-500 text-sm">Trusted by hundreds of patients since opening in 2021</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">Dual Clinical & Aesthetic Expertise</p>
+            <p class="text-gray-500 text-sm">Rare combination of medical rigour and aesthetic artistry under one roof</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-check text-primary text-xs"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 text-sm">Multilingual & Patient-Centred</p>
+            <p class="text-gray-500 text-sm">Friendly, empathetic care in multiple languages for all patients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ THREE PILLARS ═══════════════ -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 fade-in">
+      <p class="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-3">Our Philosophy</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900">Three Pillars of<br /><span class="text-primary">Hydrolife</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="value-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center fade-in">
+        <div class="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-stethoscope text-primary text-3xl"></i>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Clinical Excellence</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Evidence-based protocols, continuous training, and the highest safety standards. We maintain medical excellence in every single procedure.</p>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center fade-in" style="transition-delay:.1s">
+        <div class="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-heart text-primary text-3xl"></i>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Compassionate Care</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Every patient is treated with dignity, empathy, and unhurried attention. Your comfort and wellbeing are always our top priority.</p>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center fade-in" style="transition-delay:.2s">
+        <div class="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-spa text-primary text-3xl"></i>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Luxury Comfort</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">A serene, private environment that soothes your senses and elevates your experience. Healthcare that truly feels like self-care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY CHOOSE US ═══════════════ -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 fade-in">
+      <p class="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-3">Why Hydrolife</p>
+      <h2 class="font-serif text-4xl font-bold text-gray-900">The Hydrolife<br /><span class="text-primary">Difference</span></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-certificate text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Fully Licensed & Certified</h4>
+            <p class="text-gray-500 text-sm">All services performed by a SANC-registered practitioner with multiple certifications.</p>
+          </div>
+        </div>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in" style="transition-delay:.06s">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-user-check text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Personalised Care Plans</h4>
+            <p class="text-gray-500 text-sm">Every treatment plan is customised to your unique needs and wellness goals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in" style="transition-delay:.12s">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-building text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Modern Facilities</h4>
+            <p class="text-gray-500 text-sm">State-of-the-art equipment in a beautifully designed, welcoming space.</p>
+          </div>
+        </div>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in" style="transition-delay:.18s">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-clock text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Flexible Scheduling</h4>
+            <p class="text-gray-500 text-sm">Extended weekday hours, Saturday availability, and appointment-only model.</p>
+          </div>
+        </div>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in" style="transition-delay:.24s">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-shield-alt text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Safe & Hygienic</h4>
+            <p class="text-gray-500 text-sm">Strict adherence to medical-grade hygiene protocols in every single procedure.</p>
+          </div>
+        </div>
+      </div>
+      <div class="value-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 fade-in" style="transition-delay:.3s">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-map-marker-alt text-primary"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm mb-1">Convenient Location</h4>
+            <p class="text-gray-500 text-sm">Easily accessible in Mokopane's JNA Centre with ample parking available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOURS & LOCATION ═══════════════ -->
+<section class="py-20 bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="font-serif text-4xl font-bold mb-2">Visit Us</h2>
+      <p class="text-teal-200 text-lg">We're here when you need us</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 fade-in">
+        <div class="flex items-center gap-3 mb-6">
+          <i class="fas fa-clock text-gold text-2xl"></i>
+          <h3 class="font-serif text-xl font-bold">Opening Hours</h3>
+        </div>
+        <div class="space-y-3 text-teal-100 text-sm">
+          <div class="flex justify-between"><span class="font-medium">Monday – Friday:</span><span>8:00 AM – 5:00 PM</span></div>
+          <div class="flex justify-between"><span class="font-medium">Saturday:</span><span>8:00 AM – 2:00 PM</span></div>
+          <div class="flex justify-between"><span class="font-medium">Sunday:</span><span class="text-red-300">Closed</span></div>
+          <div class="flex justify-between"><span class="font-medium">Public Holidays:</span><span>By Appointment Only</span></div>
+        </div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 fade-in" style="transition-delay:.1s">
+        <div class="flex items-center gap-3 mb-6">
+          <i class="fas fa-map-marker-alt text-gold text-2xl"></i>
+          <h3 class="font-serif text-xl font-bold">Location</h3>
+        </div>
+        <div class="space-y-3 text-teal-100 text-sm">
+          <p class="font-medium text-white">Shop 19, JNA Centre<br />69 Pretorius Street, Mokopane</p>
+          <div class="flex items-center gap-2"><i class="fas fa-parking text-teal-300 text-xs"></i><span>Ample parking available</span></div>
+          <div class="flex items-center gap-2"><i class="fas fa-wheelchair text-teal-300 text-xs"></i><span>Wheelchair accessible</span></div>
+          <div class="flex items-center gap-2 mt-2"><i class="fas fa-phone text-teal-300 text-xs"></i><a href="tel:0712135527" class="hover:text-white transition">071 213 5527</a></div>
+          <div class="flex items-center gap-2"><i class="fas fa-envelope text-teal-300 text-xs"></i><a href="mailto:hydrolifeclinic@gmail.com" class="hover:text-white transition break-all">hydrolifeclinic@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+    <p class="text-primary uppercase tracking-widest text-xs font-semibold mb-4">Start Today</p>
+    <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">Ready to Start Your<br /><span class="text-primary">Wellness Journey?</span></h2>
+    <p class="text-gray-500 text-xl mb-10">Book your appointment today and experience healthcare that truly cares for you.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-white px-10 py-4 rounded-full font-bold text-base shadow-lg transition">
+        <i class="fas fa-calendar-check"></i> Book Your Appointment
+      </a>
+      <a href="tel:0712135527" class="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-4 rounded-full font-bold text-base transition">
+        <i class="fas fa-phone"></i> 071 213 5527
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="bg-secondary text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="images/Hydrolife_clinic_logo.png" alt="Hydrolife Clinic" class="h-14 w-auto object-contain mb-4"
+             onerror="this.onerror=null;this.src='https://placehold.co/200x56/0d5c5c/ffffff?text=HYDROLIFE';" />
+        <p class="text-sm text-gray-300 leading-relaxed mb-5">Private medical care & aesthetic wellness. Mokopane's trusted sanctuary since 2021.</p>
+        <div class="flex gap-3">
+          <a href="https://www.facebook.com/moshibudikamogelo" target="_blank" aria-label="Facebook"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="https://www.tiktok.com/@Hydrolife_clinic" target="_blank" aria-label="TikTok"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition">
+            <i class="fab fa-tiktok text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-serif text-base font-semibold mb-4 text-gold">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html"    class="text-gray-300 hover:text-white transition">Home</a></li>
+          <li><a href="services.html" class="text-gray-300 hover:text-white transition">Services</a></li>
+          <li><a href="about.html"    class="text-gray-300 hover:text-white transition">About Us</a></li>
+          <li><a href="contact.html"  class="text-gray-300 hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-base font-semibold mb-4 text-gold">Our Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="services.html#medical"  class="text-gray-300 hover:text-white transition">Medical Care</a></li>
+          <li><a href="services.html#beauty"   class="text-gray-300 hover:text-white transition">Beauty & Aesthetics</a></li>
+          <li><a href="services.html#iv"       class="text-gray-300 hover:text-white transition">IV Vitamin Therapy</a></li>
+          <li><a href="services.html#body"     class="text-gray-300 hover:text-white transition">Body Contouring</a></li>
+          <li><a href="services.html#maternal" class="text-gray-300 hover:text-white transition">Maternal Health</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-base font-semibold mb-4 text-gold">Get in Touch</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-2 text-gray-300">
+            <i class="fas fa-map-marker-alt text-primary mt-0.5 flex-shrink-0"></i>
+            Shop 19, JNA Centre, 69 Pretorius Street, Mokopane
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-phone text-primary flex-shrink-0"></i>
+            <a href="tel:0712135527" class="text-gray-300 hover:text-white transition">071 213 5527</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-envelope text-primary flex-shrink-0"></i>
+            <a href="mailto:hydrolifeclinic@gmail.com" class="text-gray-300 hover:text-white transition break-all">hydrolifeclinic@gmail.com</a>
+          </li>
+          <li class="flex items-center gap-2 text-gray-300">
+            <i class="fas fa-clock text-primary flex-shrink-0"></i>
+            Mon–Fri: 8AM–5PM · Sat: 8AM–2PM
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-400">
+      <span>&copy; 2025 Hydrolife Clinic. All rights reserved.</span>
+      <span>Designed with care for your wellness journey</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/27712135527" target="_blank"
+   class="wa-float w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp text-3xl"></i>
+</a>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => navbar.classList.toggle("navbar-scrolled", window.scrollY > 20));
+
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamIcon = document.getElementById("ham-icon");
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+    hamIcon.classList.toggle("fa-bars");
+    hamIcon.classList.toggle("fa-times");
+  });
+  mobileMenu.querySelectorAll("a").forEach(l => l.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    hamIcon.classList.replace("fa-times", "fa-bars");
+  }));
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
